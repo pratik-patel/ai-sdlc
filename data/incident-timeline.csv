@@ -1,0 +1,9 @@
+timestamp,incidentId,type,title,detail,actor
+2026-08-11T13:42:00Z,inc_policy_ca,signal,Policy mismatch detected,Canadian cancellation case retrieved superseded global policy,Online evaluation
+2026-08-11T13:47:00Z,inc_policy_ca,signal,Second case clustered,Failure clustering linked the same policy-version pattern,Operations
+2026-08-11T13:50:00Z,inc_policy_ca,decision,SEV-2 incident declared,Potential customer and policy impact confirmed,Noah Williams
+2026-08-11T13:56:00Z,inc_policy_ca,mitigation,Canadian service constrained,Recommendation-only mode and specialist policy confirmation enabled,Service Operations
+2026-08-11T14:08:00Z,inc_policy_ca,evidence,Financial control confirmed,No unauthorized credit was executed,Marcus Lee
+2026-08-11T14:24:00Z,inc_policy_ca,diagnosis,Ranking contract gap identified,Effective date was metadata but not a ranking precondition,Maya Chen
+2026-08-11T14:41:00Z,inc_policy_ca,change,v1.9 candidate prepared,Jurisdiction and effective-date precedence added,Maya Chen
+2026-08-11T15:02:00Z,inc_policy_ca,evidence,Assurance gap opened,Two Canadian overlap scenarios require domain review,AgentGrid

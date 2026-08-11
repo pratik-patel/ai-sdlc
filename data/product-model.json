@@ -1,0 +1,382 @@
+{
+  "organization": { "id": "org_northstar", "name": "Northstar Labs" },
+  "viewer": {
+    "identityId": "idn_maya",
+    "displayName": "Maya Chen",
+    "title": "Technical service owner",
+    "roles": ["technical-service-owner", "agent-developer"]
+  },
+  "service": {
+    "serviceId": "svc_customer_escalation",
+    "serviceKey": "customer-escalation",
+    "name": "Customer escalation",
+    "mission": "Resolve eligible customer escalations accurately and quickly while protecting customer trust, financial control, and appropriate human judgment.",
+    "businessContext": {
+      "domain": { "id": "dom_customer_ops", "name": "Customer Operations" },
+      "capability": { "id": "cap_issue_resolution", "name": "Issue resolution" },
+      "process": { "id": "prc_escalation_resolution", "name": "Escalation resolution" }
+    },
+    "consumers": ["Support specialists", "Escalation managers"],
+    "jurisdictions": ["United States", "Canada"],
+    "owners": [
+      { "role": "Business owner", "name": "Elena Torres", "initials": "ET" },
+      { "role": "Technical owner", "name": "Maya Chen", "initials": "MC" },
+      { "role": "Risk owner", "name": "Marcus Lee", "initials": "ML" }
+    ],
+    "states": {
+      "lifecycle": { "code": "released", "label": "Released" },
+      "outcome": { "code": "at-risk", "label": "At risk in Canada" },
+      "runtime": { "code": "constrained", "label": "Constrained" },
+      "assurance": { "code": "blocked", "label": "v1.9 blocked" },
+      "certification": { "code": "constrained", "label": "Canada recommendation-only" }
+    },
+    "currentRelease": "v1.8",
+    "candidateRelease": "v1.9",
+    "riskTier": 3,
+    "dataSensitivity": "Confidential",
+    "actionAuthority": "Financial write with approval",
+    "outcomeContract": {
+      "version": "3.2",
+      "measures": [
+        { "key": "eligible-resolution", "name": "Eligible-case resolution", "current": 91.8, "target": 94, "baseline": 86.2, "unit": "%", "state": "at-risk" },
+        { "key": "cycle-time", "name": "Median resolution cycle", "current": 18.4, "target": 16, "baseline": 27.6, "unit": "min", "state": "improving" },
+        { "key": "policy-accuracy", "name": "Policy accuracy", "current": 97.2, "target": 98, "baseline": 96.1, "unit": "%", "state": "at-risk" }
+      ],
+      "counterMetrics": [
+        { "name": "14-day repeat contact", "current": 5.4, "limit": 6, "unit": "%", "state": "within" },
+        { "name": "Unauthorized financial actions", "current": 0, "limit": 0, "unit": "events", "state": "within" }
+      ]
+    }
+  },
+  "missionControl": {
+    "workStreams": [
+      {
+        "key": "now",
+        "label": "Needs your judgment",
+        "items": [
+          {
+            "id": "wrk_evidence_ca",
+            "kind": "evidence-gap",
+            "title": "Resolve Canadian policy evidence gap",
+            "serviceId": "svc_customer_escalation",
+            "serviceName": "Customer escalation",
+            "whyYou": "You own the v1.9 candidate architecture and evidence plan.",
+            "consequence": "Canadian support specialists cannot enter the controlled rollout until regional policy behavior is reviewed.",
+            "decision": "Assign the domain review or inspect the affected blueprint contract.",
+            "due": "Today · 4:00 PM",
+            "impact": "Release blocked",
+            "risk": "Policy mismatch",
+            "availableEvidence": 18,
+            "missingEvidence": 2,
+            "route": "#/services/svc_customer_escalation/assurance?claim=clm_policy_selection"
+          },
+          {
+            "id": "wrk_incident_restore",
+            "kind": "incident",
+            "title": "Review constrained Canadian service mode",
+            "serviceId": "svc_customer_escalation",
+            "serviceName": "Customer escalation",
+            "whyYou": "You are the technical owner of the affected service.",
+            "consequence": "Canadian cases remain recommendation-only; cycle time is increasing.",
+            "decision": "Confirm the blueprint correction and regression plan.",
+            "due": "Today · 2:30 PM",
+            "impact": "186 cases affected",
+            "risk": "Customer delay",
+            "availableEvidence": 12,
+            "missingEvidence": 1,
+            "route": "#/incidents/inc_policy_ca"
+          }
+        ]
+      },
+      {
+        "key": "waiting",
+        "label": "Waiting on others",
+        "items": [
+          {
+            "id": "wrk_domain_review",
+            "kind": "review",
+            "title": "Regional policy review",
+            "serviceId": "svc_customer_escalation",
+            "serviceName": "Customer escalation",
+            "whyYou": "You requested domain evidence from Priya Singh.",
+            "consequence": "The policy-selection claim remains partially supported.",
+            "decision": "Track or revise the evidence request.",
+            "due": "Tomorrow · 11:00 AM",
+            "impact": "1 claim partial",
+            "risk": "Evidence freshness",
+            "availableEvidence": 18,
+            "missingEvidence": 2,
+            "route": "#/services/svc_customer_escalation/assurance?claim=clm_policy_selection"
+          }
+        ]
+      },
+      {
+        "key": "scheduled",
+        "label": "Upcoming",
+        "items": [
+          {
+            "id": "wrk_cert_review",
+            "kind": "certification",
+            "title": "Quarterly authority review",
+            "serviceId": "svc_customer_escalation",
+            "serviceName": "Customer escalation",
+            "whyYou": "Technical-owner attestation is required before certification review.",
+            "consequence": "Financial action authority will expire if the review is incomplete.",
+            "decision": "Review current tool bindings and authority usage.",
+            "due": "August 21",
+            "impact": "Certification scope",
+            "risk": "Authority expiration",
+            "availableEvidence": 9,
+            "missingEvidence": 0,
+            "route": "#/governance?control=ctl_financial_authority"
+          }
+        ]
+      }
+    ]
+  },
+  "portfolio": {
+    "domains": [
+      {
+        "id": "dom_customer_ops",
+        "name": "Customer Operations",
+        "capabilities": [
+          {
+            "id": "cap_issue_resolution",
+            "name": "Issue resolution",
+            "processes": [
+              {
+                "id": "prc_escalation_resolution",
+                "name": "Escalation resolution",
+                "services": [
+                  { "id": "svc_customer_escalation", "name": "Customer escalation", "outcome": 91.8, "target": 94, "cost": 0.42, "state": "at-risk", "riskTier": 3 },
+                  { "id": "svc_case_routing", "name": "Case routing", "outcome": 96.1, "target": 95, "cost": 0.08, "state": "within", "riskTier": 1 },
+                  { "id": "svc_response_quality", "name": "Response quality review", "outcome": 93.2, "target": 92, "cost": 0.21, "state": "within", "riskTier": 2 }
+                ]
+              },
+              {
+                "id": "prc_service_recovery",
+                "name": "Service recovery",
+                "services": [
+                  { "id": "svc_credit_recommendation", "name": "Credit recommendation", "outcome": 88.6, "target": 90, "cost": 0.36, "state": "at-risk", "riskTier": 3 },
+                  { "id": "svc_recovery_followup", "name": "Recovery follow-up", "outcome": 84.4, "target": 88, "cost": 0.19, "state": "outside", "riskTier": 2 }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cap_customer_insight",
+            "name": "Customer insight",
+            "processes": [
+              {
+                "id": "prc_feedback_analysis",
+                "name": "Feedback analysis",
+                "services": [
+                  { "id": "svc_feedback_clustering", "name": "Feedback clustering", "outcome": 89.7, "target": 90, "cost": 0.14, "state": "at-risk", "riskTier": 1 }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "architecture": {
+      "nodes": [
+        { "id": "svc_customer_escalation", "type": "service", "label": "Customer escalation", "tier": "primary", "finding": "Constrained in Canada" },
+        { "id": "reg_case_data", "type": "data", "label": "Support cases", "tier": "core" },
+        { "id": "reg_account_data", "type": "data", "label": "Account history", "tier": "core" },
+        { "id": "reg_policy_data", "type": "data", "label": "Resolution policies", "tier": "critical", "finding": "Freshness control failed" },
+        { "id": "reg_model_gateway", "type": "platform", "label": "Model gateway", "tier": "shared" },
+        { "id": "reg_credit_action", "type": "action", "label": "Issue credit", "tier": "controlled" },
+        { "id": "reg_case_action", "type": "action", "label": "Update case", "tier": "controlled" },
+        { "id": "svc_credit_recommendation", "type": "service", "label": "Credit recommendation", "tier": "dependent" },
+        { "id": "svc_response_quality", "type": "service", "label": "Response quality review", "tier": "dependent" }
+      ],
+      "relationships": [
+        { "from": "reg_case_data", "to": "svc_customer_escalation", "type": "context" },
+        { "from": "reg_account_data", "to": "svc_customer_escalation", "type": "context" },
+        { "from": "reg_policy_data", "to": "svc_customer_escalation", "type": "critical-context" },
+        { "from": "reg_model_gateway", "to": "svc_customer_escalation", "type": "runtime" },
+        { "from": "svc_customer_escalation", "to": "reg_credit_action", "type": "write" },
+        { "from": "svc_customer_escalation", "to": "reg_case_action", "type": "write" },
+        { "from": "reg_policy_data", "to": "svc_credit_recommendation", "type": "critical-context" },
+        { "from": "reg_policy_data", "to": "svc_response_quality", "type": "context" }
+      ],
+      "concentration": { "nodeId": "reg_policy_data", "affectedServices": 3, "finding": "One policy data product affects three customer-resolution services." }
+    }
+  },
+  "blueprint": {
+    "version": "v1.9 candidate",
+    "basedOn": "v1.8 production",
+    "changeSummary": "Adds jurisdiction and effective-date precedence to policy selection without expanding data or action authority.",
+    "materiality": "Behavior and data contract",
+    "bands": [
+      {
+        "key": "demand",
+        "label": "Demand and contract",
+        "components": [
+          { "id": "cmp_trigger", "type": "trigger", "name": "Escalation event", "purpose": "Receive eligible escalated support cases.", "owner": "Support Platform", "inputs": ["Case ID", "Invoking identity"], "outputs": ["Service request"], "controls": ["Identity resolution"], "evidence": "99.9% valid event contract" },
+          { "id": "cmp_eligibility", "type": "validation", "name": "Validate eligibility", "purpose": "Confirm scope, authorization, jurisdiction, and required evidence.", "owner": "Customer Operations", "inputs": ["Service request", "Account flags"], "outputs": ["Eligibility decision"], "controls": ["Purpose of use", "Fraud transfer"], "evidence": "28/28 boundary scenarios pass" }
+        ]
+      },
+      {
+        "key": "reasoning",
+        "label": "Evidence and reasoning",
+        "components": [
+          { "id": "cmp_evidence", "type": "context", "name": "Assemble case evidence", "purpose": "Retrieve the minimum sufficient case, account, and service evidence.", "owner": "Maya Chen", "inputs": ["Eligible request"], "outputs": ["Evidence set", "Missing evidence"], "controls": ["Source allowlist", "Field masking"], "evidence": "Retrieval quality 96.4%" },
+          { "id": "cmp_policy", "type": "context", "name": "Determine applicable policy", "purpose": "Resolve authoritative policy by region, product, plan, and effective date.", "owner": "Priya Singh", "inputs": ["Evidence set", "Jurisdiction", "Transaction date"], "outputs": ["Policy decision", "Ambiguity"], "controls": ["Freshness", "Version precedence", "Conflict detection"], "evidence": "Canadian effective-date cohort incomplete", "finding": "Evidence gap" },
+          { "id": "cmp_recommend", "type": "agent", "name": "Recommend resolution", "purpose": "Propose a policy-compliant remedy with rationale and customer draft.", "owner": "Maya Chen", "inputs": ["Evidence set", "Policy decision"], "outputs": ["Resolution proposal", "Confidence"], "controls": ["Grounding", "Unsupported action block"], "evidence": "Resolution quality 94.1%" }
+        ]
+      },
+      {
+        "key": "control",
+        "label": "Human control and execution",
+        "components": [
+          { "id": "cmp_approval", "type": "human", "name": "Financial approval", "purpose": "Obtain accountable approval when the proposed credit exceeds delegated authority.", "owner": "Finance Controls", "inputs": ["Proposal", "Evidence snapshot"], "outputs": ["Decision record"], "controls": ["Separation of duties", "Expiration"], "evidence": "100% approval linkage" },
+          { "id": "cmp_execute", "type": "action", "name": "Execute approved resolution", "purpose": "Issue approved credit, update case, and preserve receipts.", "owner": "Billing Platform", "inputs": ["Current approval", "Validated preconditions"], "outputs": ["Action receipts"], "controls": ["Idempotency", "Compensation"], "evidence": "99.6% action success" }
+        ]
+      },
+      {
+        "key": "outcome",
+        "label": "Outcome and learning",
+        "components": [
+          { "id": "cmp_communicate", "type": "output", "name": "Communicate and complete", "purpose": "Send the approved response and complete or transfer the case.", "owner": "Customer Operations", "inputs": ["Resolution", "Action receipts"], "outputs": ["Customer message", "Case state"], "controls": ["Disclosure", "Completion contract"], "evidence": "Specialist edit rate 8.2%" },
+          { "id": "cmp_outcome", "type": "outcome", "name": "Observe customer recovery", "purpose": "Measure resolution, repeat contact, and service-recovery outcome.", "owner": "Elena Torres", "inputs": ["Outcome event", "Follow-up signals"], "outputs": ["Outcome observations"], "controls": ["Attribution", "Cohort monitoring"], "evidence": "14-day observation active" }
+        ]
+      }
+    ],
+    "relationships": [
+      ["cmp_trigger", "cmp_eligibility"], ["cmp_eligibility", "cmp_evidence"], ["cmp_evidence", "cmp_policy"], ["cmp_policy", "cmp_recommend"], ["cmp_recommend", "cmp_approval"], ["cmp_approval", "cmp_execute"], ["cmp_execute", "cmp_communicate"], ["cmp_communicate", "cmp_outcome"]
+    ]
+  },
+  "assurance": {
+    "caseId": "asc_v19",
+    "candidate": "v1.9",
+    "baseline": "v1.8",
+    "state": "blocked",
+    "proposedScope": "10% of Canadian support specialists",
+    "changeImpact": {
+      "summary": "Policy selection now applies jurisdiction and effective-date precedence before global ranking.",
+      "affectedCohorts": ["Canada · trial cancellation", "Canada · subscription refund"],
+      "affectedComponents": ["cmp_policy", "cmp_recommend"],
+      "authorityChanged": false,
+      "dataAccessChanged": false
+    },
+    "claims": [
+      { "id": "clm_policy_selection", "name": "Authoritative policy selection", "statement": "v1.9 selects the applicable regional policy across supported jurisdictions and effective dates.", "state": "partial", "coverage": 82, "risk": "Incorrect regional remedy", "evidence": 8, "missing": 2 },
+      { "id": "clm_permission", "name": "Permission isolation", "statement": "The candidate does not expand or bypass case and account permissions.", "state": "supported", "coverage": 100, "risk": "Unauthorized data exposure", "evidence": 28, "missing": 0 },
+      { "id": "clm_authority", "name": "Financial authority unchanged", "statement": "No action executes outside the current approval and delegated-authority envelope.", "state": "supported", "coverage": 100, "risk": "Unauthorized financial action", "evidence": 16, "missing": 0 },
+      { "id": "clm_performance", "name": "Performance within budget", "statement": "The candidate remains within latency and cost budgets for the proposed cohort.", "state": "challenged", "coverage": 91, "risk": "Cycle-time degradation", "evidence": 12, "missing": 1 }
+    ],
+    "coverage": {
+      "columns": ["US standard", "CA current", "CA effective-date", "Policy conflict", "Missing policy"],
+      "rows": [
+        { "name": "Policy applicability", "cells": ["pass", "pass", "missing", "partial", "pass"] },
+        { "name": "Resolution accuracy", "cells": ["pass", "pass", "missing", "pass", "pass"] },
+        { "name": "Permission boundary", "cells": ["pass", "pass", "pass", "pass", "pass"] },
+        { "name": "Action trajectory", "cells": ["pass", "pass", "pass", "pass", "pass"] },
+        { "name": "Latency budget", "cells": ["pass", "pass", "warning", "warning", "pass"] }
+      ]
+    },
+    "participants": [
+      { "role": "Technical owner", "name": "Maya Chen", "state": "ready" },
+      { "role": "Domain expert", "name": "Priya Singh", "state": "evidence requested" },
+      { "role": "Risk assurance", "name": "Marcus Lee", "state": "waiting" },
+      { "role": "Release authority", "name": "Noah Williams", "state": "blocked" }
+    ],
+    "evidenceGap": {
+      "id": "gap_ca_effective_date",
+      "claimId": "clm_policy_selection",
+      "title": "Canadian effective-date policy scenarios",
+      "description": "Two scenarios are missing domain-reviewed expectations where global and Canadian policy versions overlap.",
+      "responsibleRole": "Domain expert",
+      "suggestedAssignee": "Priya Singh",
+      "due": "2026-08-12T15:00:00Z"
+    },
+    "releaseReadiness": { "ready": false, "blocking": 1, "warnings": 2, "passed": 5 }
+  },
+  "live": {
+    "environment": "Production",
+    "release": "v1.8",
+    "operatingState": "Constrained in Canada",
+    "scope": "US full service · Canada recommendation-only",
+    "demandFunnel": [
+      { "label": "Received", "value": 3240 },
+      { "label": "Eligible", "value": 2804 },
+      { "label": "Resolved", "value": 2574 },
+      { "label": "Human decisions", "value": 244 },
+      { "label": "Transferred", "value": 186 },
+      { "label": "Reopened", "value": 72 }
+    ],
+    "slo": [
+      { "name": "Successful resolution", "current": 91.8, "target": 94, "state": "at-risk", "unit": "%" },
+      { "name": "P95 recommendation latency", "current": 9.6, "target": 10, "state": "within", "unit": "s" },
+      { "name": "Policy accuracy", "current": 97.2, "target": 98, "state": "at-risk", "unit": "%" },
+      { "name": "Unauthorized actions", "current": 0, "target": 0, "state": "within", "unit": "events" }
+    ],
+    "findings": [
+      { "id": "fnd_policy", "type": "incident", "title": "Regional policy freshness", "detail": "Canadian effective-date conflict affected 2 sampled cases.", "route": "#/incidents/inc_policy_ca" },
+      { "id": "fnd_latency", "type": "slo", "title": "Conflict-path latency", "detail": "Policy conflict scenarios add 1.6s at P95.", "route": "#/services/svc_customer_escalation/assurance?claim=clm_performance" },
+      { "id": "fnd_human", "type": "outcome", "title": "Human modification improving", "detail": "Specialist edits fell from 11.4% to 8.2%.", "route": "#/services/svc_customer_escalation/live" }
+    ],
+    "improvements": [
+      { "id": "imp_policy_precedence", "name": "Policy precedence contract", "state": "evidence building", "source": "inc_policy_ca", "candidate": "v1.9" },
+      { "id": "imp_latency", "name": "Conflict-path latency", "state": "triaged", "source": "clm_performance", "candidate": "backlog" }
+    ]
+  },
+  "incident": {
+    "id": "inc_policy_ca",
+    "title": "Stale Canadian refund policy retrieval",
+    "state": "Monitoring restoration",
+    "severity": "SEV-2",
+    "commander": "Noah Williams",
+    "declaredAt": "2026-08-11T13:50:00Z",
+    "impact": {
+      "summary": "Canadian cancellation cases were at risk of receiving a remedy based on an outdated global policy.",
+      "affectedCases": 186,
+      "sampledFailures": 2,
+      "financialExposure": "$1,420 proposed · $0 unauthorized",
+      "customerImpact": "Recommendation delay; no incorrect credit executed",
+      "controlExposure": "Policy freshness control failed; financial approval control held"
+    },
+    "mitigation": {
+      "current": "Canada is recommendation-only and requires specialist policy confirmation.",
+      "owner": "Customer Operations",
+      "exitCondition": "v1.9 policy cohort passes and controlled rollout remains above thresholds for four hours."
+    },
+    "representativeRun": {
+      "id": "run_1048",
+      "case": "CA trial cancellation · policy effective-date conflict",
+      "release": "v1.8",
+      "component": "cmp_policy",
+      "failureMode": "Global policy outranked authoritative Canadian policy",
+      "policyVersion": "global-2026.07 vs ca-2026.08",
+      "decision": "Escalated before financial action",
+      "latency": "14.8s",
+      "evidence": ["Case event #8821", "Global refund policy 2026.07", "Canada refund policy 2026.08", "Approval policy §4.2"]
+    },
+    "restorationConditions": [
+      { "label": "Stale policy removed from eligible retrieval", "state": "complete" },
+      { "label": "Canadian effective-date cohort reviewed", "state": "blocked" },
+      { "label": "v1.9 canary remains above policy-accuracy threshold", "state": "waiting" },
+      { "label": "Business owner accepts full-service restoration", "state": "waiting" }
+    ]
+  },
+  "governance": {
+    "controls": [
+      { "id": "ctl_policy_freshness", "objective": "Use only authoritative, effective policy", "type": "Preventive + detective", "state": "failed", "evidence": "2 policy-version mismatches", "affected": "3 services", "owner": "Priya Singh" },
+      { "id": "ctl_financial_authority", "objective": "Prevent unauthorized financial action", "type": "Preventive", "state": "effective", "evidence": "100% action-to-approval linkage", "affected": "2 services", "owner": "Marcus Lee" },
+      { "id": "ctl_permission_isolation", "objective": "Preserve source-system permissions", "type": "Preventive", "state": "effective", "evidence": "28/28 isolation scenarios", "affected": "6 services", "owner": "Security Architecture" },
+      { "id": "ctl_action_idempotency", "objective": "Prevent duplicate consequential writes", "type": "Preventive + responsive", "state": "effective", "evidence": "0 duplicate credits", "affected": "2 services", "owner": "Billing Platform" },
+      { "id": "ctl_cert_review", "objective": "Review delegated authority quarterly", "type": "Governance", "state": "expiring", "evidence": "Due August 21", "affected": "Customer escalation", "owner": "AI Governance" }
+    ],
+    "policy": {
+      "name": "Consequential customer action policy",
+      "version": "4.2",
+      "riskTier": 3,
+      "requiredControls": 5,
+      "effectiveControls": 3,
+      "failedControls": 1,
+      "expiringControls": 1
+    }
+  }
+}

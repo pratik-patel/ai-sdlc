@@ -1,0 +1,13 @@
+id,agentId,startedAt,status,latency,cost,outcome,failureCategory,summary
+run-1048,customer-escalation,2026-08-11T13:42:00Z,failed,14.8,0.58,Escalated,Knowledge gap,Refund policy source returned an outdated regional rule
+run-1047,customer-escalation,2026-08-11T13:36:00Z,succeeded,7.9,0.39,Resolved,,Prepared response and updated case after approval
+run-1046,sales-account-brief,2026-08-11T13:24:00Z,succeeded,5.8,0.27,Delivered,,Generated cited brief from CRM and meeting history
+run-1045,policy-navigator,2026-08-11T13:18:00Z,review,5.1,0.19,Needs review,Permission check,Contractor policy access requires validation
+run-1044,invoice-triage,2026-08-11T13:11:00Z,failed,16.4,0.81,Blocked,Tool timeout,Finance routing service exceeded timeout
+run-1043,customer-escalation,2026-08-11T12:58:00Z,succeeded,8.2,0.41,Resolved,,Applied approved service credit and closed case
+run-1042,invoice-triage,2026-08-11T12:44:00Z,failed,11.7,0.67,Incorrect route,Schema mismatch,Invoice region code did not match the routing schema
+run-1041,sales-account-brief,2026-08-11T12:31:00Z,succeeded,6.1,0.29,Delivered,,Prepared meeting brief with six verified sources
+run-1040,customer-escalation,2026-08-11T12:19:00Z,succeeded,7.4,0.37,Resolved,,Draft accepted without edits
+run-1039,policy-navigator,2026-08-11T12:02:00Z,succeeded,4.6,0.17,Answered,,Returned policy answer with three citations
+run-1038,customer-escalation,2026-08-11T11:48:00Z,failed,12.9,0.52,Escalated,Retrieval quality,Top retrieved article was not applicable to enterprise plan
+run-1037,sales-account-brief,2026-08-11T11:32:00Z,succeeded,6.7,0.32,Delivered,,Generated brief and surfaced renewal risk

@@ -1,0 +1,136 @@
+{
+  "thread": {
+    "id": "wth_customer_escalation",
+    "title": "Reduce escalation time without unauthorized credits",
+    "serviceId": "svc_customer_escalation",
+    "status": "in_progress",
+    "currentMoment": 0,
+    "startedBy": { "name": "Maya Chen", "role": "Technical service owner" },
+    "participants": [
+      { "name": "Maya Chen", "role": "Technical owner", "state": "active" },
+      { "name": "Elena Torres", "role": "Business owner", "state": "context supplied" },
+      { "name": "Priya Singh", "role": "Policy owner", "state": "not yet involved" },
+      { "name": "Marcus Lee", "role": "Risk owner", "state": "review later" }
+    ],
+    "arrival": {
+      "reason": "A Canadian policy-freshness incident exposed a gap between the service's intended authority and its implemented behavior.",
+      "source": "SEV-2 incident inc_policy_ca",
+      "consequence": "Canadian cases remain recommendation-only until the policy boundary and evidence obligations are explicit."
+    }
+  },
+  "moments": [
+    {
+      "id": "meaningful_beginning",
+      "eyebrow": "Begin from consequence",
+      "title": "You are here because service intent and live behavior diverged.",
+      "agent": "Definition Agent",
+      "message": "I can use the incident as evidence for a new service definition, or we can begin from a clean business intent. I will preserve the source either way.",
+      "question": "What should anchor this work thread?",
+      "options": [
+        { "id": "anchor_incident", "label": "Use the observed incident", "description": "Start with verified production evidence and reconstruct intended behavior." },
+        { "id": "anchor_intent", "label": "Start from business intent", "description": "Frame the outcome first and use the incident later as supporting evidence." }
+      ],
+      "consequence": "This choice establishes provenance; it does not determine the solution."
+    },
+    {
+      "id": "first_boundary",
+      "eyebrow": "Outcome and boundary",
+      "title": "Define success before defining an agent.",
+      "agent": "Definition Agent",
+      "message": "The live evidence suggests the desired outcome is faster, policy-correct escalation resolution—while preserving accountable financial approval.",
+      "question": "Which completion boundary represents the business outcome?",
+      "options": [
+        { "id": "boundary_resolved", "label": "Resolved or safely transferred", "description": "Complete only when the customer receives an approved resolution or an accountable specialist owns the transfer." },
+        { "id": "boundary_recommended", "label": "Recommendation produced", "description": "End the service when a recommendation is generated, leaving completion outside the service contract." }
+      ],
+      "consequence": "The boundary determines ownership, outcome measurement, and which failures remain inside the service."
+    },
+    {
+      "id": "living_contract",
+      "eyebrow": "Materialize the service",
+      "title": "The work is becoming an inspectable service contract.",
+      "agent": "Architecture Agent",
+      "message": "The service now spans evidence assembly, policy determination, recommendation, human approval, controlled execution, customer communication, and outcome observation.",
+      "question": "Should policy ambiguity remain inside the service or transfer immediately?",
+      "options": [
+        { "id": "ambiguity_transfer", "label": "Transfer with evidence", "description": "Route ambiguity to the policy owner with the conflicting sources and case context attached." },
+        { "id": "ambiguity_rank", "label": "Let the model rank policies", "description": "Allow the service to select the highest-ranked policy even when authoritative sources conflict." }
+      ],
+      "consequence": "This choice changes the service sketch, ownership boundary, failure modes, and test obligations."
+    },
+    {
+      "id": "material_policy",
+      "eyebrow": "Review a material proposition",
+      "title": "A policy rule cannot remain a hidden inference.",
+      "agent": "Governance Agent",
+      "message": "Observed behavior shows a global policy can outrank a newer Canadian policy. I propose: jurisdiction and effective date take precedence; unresolved conflicts transfer to the policy owner before recommendation.",
+      "question": "How should this proposition enter the draft?",
+      "options": [
+        { "id": "policy_accept_draft", "label": "Accept as draft", "description": "Record the rule as an explicit draft decision and require domain confirmation." },
+        { "id": "policy_contest", "label": "Contest the proposition", "description": "Keep the clause unresolved and document the competing interpretation." }
+      ],
+      "consequence": "Accepting a draft is not approval; it creates accountable verification work."
+    },
+    {
+      "id": "focused_collaboration",
+      "eyebrow": "Bring expertise to the exact decision",
+      "title": "Priya does not need the whole portal—only the policy decision.",
+      "agent": "Definition Agent",
+      "message": "I prepared a focused request with the proposed clause, conflicting evidence, affected Canadian cohort, and the consequence of accepting or rejecting it.",
+      "question": "Send the contribution request and incorporate the domain response?",
+      "options": [
+        { "id": "collaborate_priya", "label": "Ask Priya in context", "description": "Capture her confirmation, source citation, and one required exception without losing the thread." },
+        { "id": "defer_policy_owner", "label": "Defer and assign", "description": "Keep the gap visible and continue only under a constrained draft state." }
+      ],
+      "consequence": "The contribution becomes part of the decision ledger, not a detached comment."
+    },
+    {
+      "id": "authority_envelope",
+      "eyebrow": "Bound authority",
+      "title": "Technical capability is not permission to act.",
+      "agent": "Governance Agent",
+      "message": "The imported implementation can call the credit and case APIs. The proposed service authority must be narrower than that capability.",
+      "question": "Which authority envelope should the Trusted Draft carry?",
+      "options": [
+        { "id": "authority_human_credit", "label": "Recommend; human approves credit", "description": "The service may update case notes, but every financial action requires a current human approval." },
+        { "id": "authority_small_credit", "label": "Auto-issue credits under $50", "description": "Delegate low-value financial execution within policy and confidence thresholds." }
+      ],
+      "consequence": "This decision binds actions, execution identity, approvals, audit receipts, and negative test obligations."
+    },
+    {
+      "id": "trusted_draft",
+      "eyebrow": "Decision briefing",
+      "title": "The service is coherent enough to compose—not yet safe to release.",
+      "agent": "Test Designer",
+      "message": "Outcome, boundary, evidence, authority, responsibilities, and rehearsal obligations now form one versioned working agreement. One domain exception remains visible and assigned.",
+      "question": "Commit this version as the Trusted Draft?",
+      "options": [
+        { "id": "commit_trusted_draft", "label": "Commit Trusted Draft", "description": "Freeze the shared agreement and continue into service composition with causal lineage preserved." },
+        { "id": "review_material_decisions", "label": "Review material decisions", "description": "Return to the decision ledger before composition begins." }
+      ],
+      "consequence": "Commitment authorizes composition work only. Release authority remains blocked until evidence obligations pass."
+    }
+  ],
+  "clauses": [
+    { "id": "cl_outcome", "family": "Outcome", "statement": "Reduce eligible escalation cycle time while improving policy-correct resolution.", "epistemic": "stated", "decision": "proposed", "source": "Elena Torres · service recovery objective", "revealedAt": 0 },
+    { "id": "cl_boundary", "family": "Completion", "statement": "Complete when the customer receives an approved resolution or an accountable specialist owns the transfer.", "epistemic": "inferred", "decision": "proposed", "source": "Definition Agent interpretation", "revealedAt": 1 },
+    { "id": "cl_evidence", "family": "Evidence", "statement": "Use case, account, jurisdiction, transaction date, and the authoritative effective policy.", "epistemic": "sourced", "decision": "accepted as draft", "source": "Blueprint v1.8 + incident run_1048", "revealedAt": 2 },
+    { "id": "cl_ambiguity", "family": "Judgment", "statement": "Transfer unresolved policy conflicts to the policy owner with evidence attached.", "epistemic": "inferred", "decision": "proposed", "source": "Incident inference", "revealedAt": 2 },
+    { "id": "cl_policy", "family": "Policy", "statement": "Jurisdiction and effective date take precedence over global retrieval rank.", "epistemic": "inferred", "decision": "proposed", "source": "Governance Agent proposition", "revealedAt": 3 },
+    { "id": "cl_authority", "family": "Authority", "statement": "The service recommends a remedy; a human approves every financial action.", "epistemic": "stated", "decision": "proposed", "source": "Current control policy §4.2", "revealedAt": 5 },
+    { "id": "cl_fitness", "family": "Fitness", "statement": "Pass Canadian effective-date, policy-conflict, missing-policy, permission-isolation, and approval-linkage scenarios.", "epistemic": "inferred", "decision": "proposed", "source": "Test Designer from material decisions", "revealedAt": 6 }
+  ],
+  "serviceSketch": [
+    { "id": "sk_trigger", "label": "Escalation arrives", "type": "trigger", "revealedAt": 1 },
+    { "id": "sk_evidence", "label": "Assemble minimum evidence", "type": "context", "revealedAt": 2 },
+    { "id": "sk_policy", "label": "Determine applicable policy", "type": "judgment", "revealedAt": 2 },
+    { "id": "sk_recommend", "label": "Recommend resolution", "type": "agent", "revealedAt": 3 },
+    { "id": "sk_approval", "label": "Human approves credit", "type": "human", "revealedAt": 5 },
+    { "id": "sk_execute", "label": "Execute and preserve receipts", "type": "action", "revealedAt": 5 },
+    { "id": "sk_outcome", "label": "Observe recovery outcome", "type": "outcome", "revealedAt": 6 }
+  ],
+  "gaps": [
+    { "id": "gap_policy_owner", "title": "Confirm Canadian precedence and exception rule", "owner": "Priya Singh", "state": "unassigned", "material": true, "revealedAt": 3 },
+    { "id": "gap_rehearsal", "title": "Author Canadian effective-date rehearsal cohort", "owner": "Test Designer", "state": "drafted", "material": true, "revealedAt": 6 }
+  ]
+}
