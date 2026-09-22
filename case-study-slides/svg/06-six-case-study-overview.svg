@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
-  <title id="title">Six AI-SDLC case studies across transportation, banking, healthcare, professional services, legal technology and insurance</title>
-  <desc id="description">A six-tile executive overview, each tile presenting the industry's distinct delivery constraint, the AI-SDLC intervention, and one leading result.</desc>
+  <title id="title">AI SDLC in action across industries</title>
+  <desc id="description">An executive overview of distinct delivery constraints, AI-SDLC interventions, and leading results.</desc>
   <defs>
     <linearGradient id="pageWash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBFCFE"/><stop offset="1" stop-color="#F1F5FA"/></linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3C2CDA"/><stop offset="1" stop-color="#14AFC5"/></linearGradient>
@@ -22,16 +22,15 @@
   </defs>
   <rect width="1600" height="900" fill="url(#pageWash)"/>
   <rect x="0" y="0" width="16" height="900" fill="#3C2CDA"/>
-  <text x="70" y="46" class="eyebrow">AI SDLC CASE STUDIES</text>
-  <text x="70" y="107" class="title">Six AI-SDLC transformations</text>
-  <text x="70" y="147" class="subtitle">Each organization accelerated a different bottleneck while keeping delivery accountable</text>
+  <text x="70" y="46" class="eyebrow">CASE STUDIES</text>
+  <text x="70" y="107" class="title">AI SDLC in action</text>
+  <text x="70" y="147" class="subtitle">Different constraints. Measurable outcomes.</text>
 
   <g filter="url(#softShadow)"><rect x="70" y="195" width="460" height="275" rx="17" fill="#FFF"/></g>
   <rect x="70" y="195" width="460" height="6" rx="3" fill="#3C2CDA"/>
   <text x="99" y="234" class="industry">TRANSPORTATION &amp; LOGISTICS</text>
   <text x="99" y="277" class="headline">Complexity made change slow</text>
-  <text x="99" y="312" class="intervention">Mapped five connected airline domains</text>
-  <text x="99" y="334" class="intervention">into a governed engineering flow</text>
+  <text x="99" y="312" class="intervention">Five airline domains, one governed flow</text>
   <line x1="99" y1="365" x2="500" y2="365" stroke="#DDE4EF"/>
   <text x="99" y="414" class="metric">3.5 → 1.25 years</text>
   <text x="99" y="442" class="metricCaption">PROGRAM DELIVERY</text>
@@ -40,8 +39,7 @@
   <rect x="570" y="195" width="460" height="6" rx="3" fill="#2653CB"/>
   <text x="599" y="234" class="industry">BANKING</text>
   <text x="599" y="277" class="headline">Assurance moved into the flow</text>
-  <text x="599" y="312" class="intervention">Agent families combined engineering,</text>
-  <text x="599" y="334" class="intervention">PII, security and compliance</text>
+  <text x="599" y="312" class="intervention">PII, security and compliance built into delivery</text>
   <line x1="599" y1="365" x2="1000" y2="365" stroke="#DDE4EF"/>
   <text x="599" y="414" class="metric">1.5×</text>
   <text x="599" y="442" class="metricCaption">PRODUCTIVITY ACROSS THE SDLC</text>
@@ -50,8 +48,7 @@
   <rect x="1070" y="195" width="460" height="6" rx="3" fill="#078CA4"/>
   <text x="1099" y="234" class="industry">HEALTHCARE &amp; LIFE SCIENCES</text>
   <text x="1099" y="277" class="headline">Small pods multiplied speed</text>
-  <text x="1099" y="312" class="intervention">A 12-person team became four AI-enabled</text>
-  <text x="1099" y="334" class="intervention">mini-pods with end-to-end ownership</text>
+  <text x="1099" y="312" class="intervention">12 people became four AI-enabled mini-pods</text>
   <line x1="1099" y1="365" x2="1500" y2="365" stroke="#DDE4EF"/>
   <text x="1099" y="414" class="metric">5×+</text>
   <text x="1099" y="442" class="metricCaption">FASTER PORTAL DELIVERY</text>
@@ -60,8 +57,7 @@
   <rect x="70" y="490" width="460" height="6" rx="3" fill="#2653CB"/>
   <text x="99" y="529" class="industry">PROFESSIONAL SERVICES</text>
   <text x="99" y="572" class="headline">AI adoption became a system</text>
-  <text x="99" y="607" class="intervention">Commercial AI product plus shared</text>
-  <text x="99" y="629" class="intervention">context, harness and portfolio controls</text>
+  <text x="99" y="607" class="intervention">Shared context, harness and portfolio controls</text>
   <line x1="99" y1="660" x2="500" y2="660" stroke="#DDE4EF"/>
   <text x="99" y="709" class="metric">~280 teams</text>
   <text x="99" y="738" class="smallProof">3,000 users · 40 programs · 1B tokens/month</text>
@@ -70,8 +66,7 @@
   <rect x="570" y="490" width="460" height="6" rx="3" fill="#3C2CDA"/>
   <text x="599" y="529" class="industry">LEGAL TECHNOLOGY</text>
   <text x="599" y="572" class="headline">Specialist review became scalable</text>
-  <text x="599" y="607" class="intervention">Productized discovery and review,</text>
-  <text x="599" y="629" class="intervention">with people focused on exceptions</text>
+  <text x="599" y="607" class="intervention">AI review with specialist exceptions</text>
   <line x1="599" y1="660" x2="1000" y2="660" stroke="#DDE4EF"/>
   <text x="599" y="709" class="metric">40–60%</text>
   <text x="599" y="737" class="metricCaption">LOWER REVIEW COST</text>
@@ -80,14 +75,13 @@
   <rect x="1070" y="490" width="460" height="6" rx="3" fill="#078CA4"/>
   <text x="1099" y="529" class="industry">INSURANCE</text>
   <text x="1099" y="572" class="headline">Policy knowledge improved service</text>
-  <text x="1099" y="607" class="intervention">AI-assisted delivery, grounded answers</text>
-  <text x="1099" y="629" class="intervention">and automated advisor workflows</text>
+  <text x="1099" y="607" class="intervention">Grounded answers and advisor automation</text>
   <line x1="1099" y1="660" x2="1500" y2="660" stroke="#DDE4EF"/>
   <text x="1099" y="709" class="metric">90%</text>
   <text x="1099" y="737" class="metricCaption">BETTER POLICY-QUERY RESOLUTION</text>
 
   <rect x="70" y="798" width="1460" height="58" rx="13" fill="#E9F1FA"/>
   <rect x="70" y="798" width="6" height="58" rx="3" fill="url(#accent)"/>
-  <text x="103" y="834" class="synthesis">Shared pattern: trusted domain knowledge, AI-supported execution, and verification in the delivery flow</text>
+  <text x="103" y="834" class="synthesis">Shared pattern: domain knowledge, AI-supported work, and built-in verification</text>
   <text x="70" y="887" class="footnote">© Hexaware Technologies. Confidential briefing.</text>
 </svg>
