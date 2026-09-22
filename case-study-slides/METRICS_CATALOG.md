@@ -1,6 +1,6 @@
 # AI SDLC case-study metric catalog
 
-This catalog supports the five enterprise case-study slides. Values remain unvalidated until the content owner confirms the definition, baseline, reporting period, comparison cohort, evidence system, and disclosure permission.
+This catalog supports the six enterprise case-study slides. Values remain unvalidated until the content owner confirms the definition, baseline, reporting period, comparison cohort, evidence system, and disclosure permission.
 
 ## Measurement structure
 
@@ -193,41 +193,58 @@ Raw prompts, generated code, agent calls, and token volume are supporting diagno
 
 Token volume and model spend can appear as supporting callouts after validation. A large token number does not indicate success without a meaningful denominator.
 
-## 11. Distinct legal-technology use case
+## 11. AI-native eDiscovery delivery
 
-The working scenario is AI-assisted matter intake and workspace preparation. This remains illustrative until the content owner supplies the actual case facts.
+The working case covers discovery, document review, redaction and production. Human specialists review exceptions and retain judgment over privileged, sensitive or uncertain material.
 
 ### Recommended customer metrics
 
 | Metric | Definition |
 |---|---|
-| Matter setup turnaround | Time from a complete intake package to an approved matter workspace. |
-| First-pass approval | AI-prepared configurations approved without material correction. |
-| Human correction rate | Extracted fields or configuration decisions changed by the specialist. |
-| Intake completeness | Required information correctly populated before review. |
-| Straight-through preparation | Matters where AI completes preparation without manual data entry, prior to human approval. |
-| Post-activation corrections | Workspaces requiring correction after approval and activation. |
-| Specialist effort | Human review and configuration hours per matter. |
-| Cost per approved matter | Intake, review, AI, and platform cost divided by approved matters. |
+| Review cost per document | Specialist, platform and model cost divided by accepted reviewed documents. |
+| Review precision | Relevant documents correctly identified divided by documents marked relevant. |
+| Human exception rate | Documents sent for specialist review divided by all processed documents. |
+| Redaction accuracy | Approved redactions without material correction divided by reviewed redactions. |
+| Defensible production | Produced documents with complete source, decision, approval and quality evidence. |
+| Matter throughput | Accepted matters completed per specialist or hybrid pod in a defined period. |
 
 ### Workload, accuracy, and legal control
 
-- Matters, documents, pages, file types, sources, clients, jurisdictions, categories, custodians, legal holds, and workspaces.
-- Field precision and recall, entity and date accuracy, missing-field detection, conflicting-information detection, duplicates, citations, confidence, and corrections by field.
-- Review, approval, setup, queue, and exception-resolution time; matters per specialist; reopened matters; handoffs; and escalations.
-- Policy, access, retention, and legal-hold accuracy; audit completeness; source-to-decision traceability; security, privacy, and client-rule exceptions.
-- Specialist hours, cost per matter and document, backlog, service-level attainment, client onboarding, revenue capacity, overtime, rework, and satisfaction.
-- AI-prepared matters, accepted and corrected recommendations, low-confidence fields, tokens and model cost per matter, retries, failures, citations, and accuracy drift.
+- Matters, documents, pages, sources, custodians, legal holds, file types and jurisdictions.
+- Relevance and privilege precision, redaction accuracy, false negatives, sampling coverage and correction rates.
+- Specialist exception volume and resolution time, accepted matters per pod, and queue time.
+- Source-to-decision traceability, access controls, retention, audit completeness and defensible output.
+- Specialist hours, review cost per document and matter, model cost per accepted document, and capacity released.
 
 ### Best slide candidates
 
-1. Matters processed.
-2. Matter setup turnaround.
-3. Intake completeness.
-4. First-pass approval.
-5. Human correction rate.
-6. Specialist effort per matter.
-7. Cost per approved matter.
+1. Review cost reduction.
+2. Review precision versus the agreed comparison.
+3. Documents requiring specialist review.
+4. End-to-end eDiscovery scope.
+5. Defensible production and audit completeness.
+
+## 12. Insurance policy servicing and customer service
+
+### Recommended customer metrics
+
+| Metric | Definition |
+|---|---|
+| Policy-query resolution improvement | Improvement in the agreed resolution measure for policy-servicing queries; establish whether it means time, first-contact resolution or successful answer rate. |
+| Manual query handling | Share or volume of policy queries needing human handling in comparable periods. |
+| Delivery-cycle improvement | Change in elapsed time from approved policy change to verified release. |
+| Grounded-answer acceptance | Policy answers accepted by specialists with a valid source reference and no material correction. |
+| Human escalation quality | Sensitive, ambiguous or low-confidence queries correctly routed to specialists. |
+| Advisor registration throughput | Approved advisor registrations completed per period with the required controls. |
+| Cost per resolved query | Service labor, model and platform cost divided by accepted query resolutions. |
+
+### Best slide candidates
+
+1. Policy-query resolution improvement.
+2. Reduction in manual query handling.
+3. AI-assisted delivery-cycle improvement.
+4. Grounded-answer acceptance and escalation quality.
+5. Advisor-registration cycle time and accuracy.
 
 ## Publication standard
 

@@ -66,7 +66,7 @@ function deltaVisual() {
     out += `<circle cx="${x}" cy="${y}" r="28" fill="#FFFFFF" stroke="#7C89B8"/>`;
     out += `<text x="${x}" y="${y + 4}" text-anchor="middle" class="vizMicro">${esc(label)}</text>`;
   }
-  out += `<g transform="translate(54,278)"><text class="vizMetric" x="0" y="0">6.2M*</text><text class="vizSmall" x="0" y="20">lines of code</text><text class="vizMetric" x="0" y="72">52,017*</text><text class="vizSmall" x="0" y="92">data interactions</text></g>`;
+  out += `<g transform="translate(54,278)"><text class="vizMetric" x="0" y="0">6.2M</text><text class="vizSmall" x="0" y="20">lines of code</text><text class="vizMetric" x="0" y="72">52,017</text><text class="vizSmall" x="0" y="92">data interactions</text></g>`;
   out += `<g transform="translate(625,300)"><rect width="122" height="194" rx="14" fill="#071127" stroke="#2782F8"/><text x="61" y="31" text-anchor="middle" class="vizCap light">HARNESS</text><text x="61" y="66" text-anchor="middle" class="vizSmall light">understand</text><text x="61" y="98" text-anchor="middle" class="vizSmall light">generate</text><text x="61" y="130" text-anchor="middle" class="vizSmall light">verify</text><text x="61" y="168" text-anchor="middle" class="vizCap cyan">AT SCALE</text></g>`;
   out += '</g>';
   return out;
@@ -108,13 +108,13 @@ function veridyanVisual() {
     if(i<steps.length-1) out += `<line x1="${x+92}" y1="340" x2="${x+135}" y2="340" stroke="#7F8DB8" stroke-width="2"/>`;
   });
   out += `<rect x="67" y="424" width="650" height="90" rx="14" fill="#071127"/>`;
-  out += `<text x="92" y="457" class="vizCap cyan">FIVE PORTALS REQUIRED*</text>`;
+  out += `<text x="92" y="457" class="vizCap cyan">FIVE PORTALS REQUIRED</text>`;
   for(let i=0;i<5;i++){
     const x=92+i*119;
     out += `<rect x="${x}" y="473" width="95" height="25" rx="6" fill="${i===0?'#164C3A':'#141F3D'}" stroke="${i===0?'#32C98A':'#53658E'}"/>`;
     out += `<text x="${x+47.5}" y="490" text-anchor="middle" class="vizMicro light">${i===0?'released?':'portal '+(i+1)}</text>`;
   }
-  out += `<text x="717" y="540" text-anchor="end" class="vizMicro">*portal names and release status require confirmation</text>`;
+  out += `<text x="717" y="540" text-anchor="end" class="vizMicro">Portal names and release status require confirmation</text>`;
   out += '</g>';
   return out;
 }
@@ -124,11 +124,11 @@ function eyVisual() {
   out += `<text x="406" y="258" text-anchor="middle" class="vizTitle light">ENTERPRISE ADOPTION OPERATING MODEL</text>`;
   const rings = [[405,392,126,'#2639B8'],[405,392,91,'#1D64C7'],[405,392,56,'#1EA7CE']];
   for(const [cx,cy,r,c] of rings) out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${c}" stroke-width="22" opacity=".8"/>`;
-  out += `<circle cx="405" cy="392" r="37" fill="#0D1733" stroke="#43D0E1"/><text x="405" y="388" text-anchor="middle" class="vizCap light">~2,000*</text><text x="405" y="407" text-anchor="middle" class="vizMicro light">participants</text>`;
+  out += `<circle cx="405" cy="392" r="37" fill="#0D1733" stroke="#43D0E1"/><text x="405" y="388" text-anchor="middle" class="vizCap light">~2,000</text><text x="405" y="407" text-anchor="middle" class="vizMicro light">participants</text>`;
   const labels=[[405,241,'ENABLEMENT'],[620,327,'GOVERNANCE'],[619,477,'COST CONTROL'],[191,477,'OPERATIONS'],[191,327,'MEASUREMENT']];
   labels.forEach(([x,y,t])=>{out += `<rect x="${x-68}" y="${y-18}" width="136" height="36" rx="18" fill="#111D3B" stroke="#5875D8"/><text x="${x}" y="${y+4}" text-anchor="middle" class="vizCap light">${t}</text>`});
   out += `<text x="67" y="528" class="vizSmall light">Scale requires governed access, support capacity, outcome measurement and unit economics.</text>`;
-  out += `<text x="717" y="548" text-anchor="end" class="vizMicro">*working figure; validate participant definition and period</text>`;
+  out += `<text x="717" y="548" text-anchor="end" class="vizMicro">Participant definition and reporting period require confirmation</text>`;
   out += '</g>';
   return out;
 }
@@ -151,8 +151,8 @@ const cases = [
     challenge: ['Forward engineering spans millions of lines of code and more than 50,000 data', 'interactions. Tightly coupled dependencies require reliable context before AI can', 'change the system.'],
     solution: ['Create a context layer that maps code, data flows, business rules and dependencies.', 'Use an engineering harness to give AI governed context before it proposes a change.', 'Generate changes through repeatable patterns and verify them against system-level evidence.', 'Use this case as the presenter handoff into the context and harness story.'],
     benefits: ['More consistent changes across a large engineering estate.', 'Faster impact analysis and less manual discovery.', 'Verification evidence can scale with the volume of AI-generated change.'],
-    metrics: [{value:'6.2M*',label:['lines of code','working figure']},{value:'52,017*',label:['data interactions','working figure']},{value:'[TBD]',label:['dependencies','to validate']}],
-    note: '* Working figures from supplied reference. Validate definitions and permission before publication.', visual: deltaVisual
+    metrics: [{value:'6.2M',label:['lines of code','reported figure']},{value:'52,017',label:['data interactions','reported figure']},{value:'[TBD]',label:['dependencies','to validate']}],
+    note: 'Figures come from the supplied reference. Confirm definitions and publication permission.', visual: deltaVisual
   },
   {
     file: '08-umb-coordinated-transformation.svg', industry: 'Banking',
@@ -171,17 +171,17 @@ const cases = [
     challenge: ['The organization needs five portals and has limited external support. The delivery', 'model must carry each product from requirements through release without creating', 'disconnected handoffs.'],
     solution: ['Use AI to structure requirements and maintain traceability into design and implementation.', 'Apply AI during experience design, development, testing and release preparation.', 'Reuse patterns and evidence across the portal portfolio while preserving product differences.', 'Confirm the released portal, timing and remaining portal scope before final publication.'],
     benefits: ['One continuous delivery model across the full lifecycle.', 'A lean team can reuse context and verification assets across portals.', 'Results and timing remain intentionally unstated until the full case evidence is supplied.'],
-    metrics: [{value:'5*',label:['portals','required']},{value:'[NAME]',label:['portal released','confirm']},{value:'[TBD]',label:['cycle time','and team size']}],
-    note: '* Five-portal requirement supplied by the user. Release status, results and timing require confirmation.', visual: veridyanVisual
+    metrics: [{value:'5',label:['portals','required']},{value:'[NAME]',label:['portal released','confirm']},{value:'[TBD]',label:['cycle time','and team size']}],
+    note: 'The five-portal requirement came from the supplied material. Release status, results and timing require confirmation.', visual: veridyanVisual
   },
   {
-    file: '10-ey-enterprise-adoption-at-scale.svg', industry: 'Professional Services',
+    file: '10-ey-enterprise-adoption-at-scale.svg', industry: 'Professional Services', hideBrand: true,
     client: ['A global enterprise scaling AI adoption', 'across teams, programs and functions'],
     lead: ['Enterprise adoption at scale'],
     challenge: ['Adoption at this scale creates an operating-system problem. Access, support and', 'governance must keep pace with enablement, measurement and cost control as many', 'teams use AI every day.'],
     solution: ['Establish a governed access model with clear ownership, approved tools and support paths.', 'Build enablement around real roles and workflows, then track adoption and proficiency by cohort.', 'Measure productivity and quality by program instead of relying on raw activity metrics.', 'Manage tokens and model usage through budgets, routing, observability and unit-cost targets.'],
     benefits: ['Leaders can distinguish participation from sustained, productive use.', 'Governance and support scale with the number of teams and programs.', 'Cost management connects token consumption to verified delivery outcomes.'],
-    metrics: [{value:'~2,000*',label:['participants','definition TBD']},{value:'[TBD]',label:['programs / teams','in scope']},{value:'[VALIDATE]',label:['tokens + cost','do not publish yet']}],
+    metrics: [{value:'~2,000',label:['participants','definition TBD']},{value:'[TBD]',label:['programs / teams','in scope']},{value:'[VALIDATE]',label:['tokens + cost','do not publish yet']}],
     note: 'Validate participant count, reporting period, token volume, productivity method and disclosure permission.', visual: eyVisual
   },
   {
@@ -213,7 +213,7 @@ function svg(c, index) {
   </defs>
   <rect width="1600" height="900" fill="#000"/>
   <text x="36" y="62" class="industry">${esc(c.industry)}</text>
-  <text x="1538" y="45" text-anchor="end" class="brand">HEXaware</text>
+  ${c.hideBrand ? '' : '<text x="1538" y="45" text-anchor="end" class="brand">HEXaware</text>'}
   <text x="36" y="111" class="section">Client</text>
   ${lines(c.client,36,151,'client',40)}
   ${c.visual()}
