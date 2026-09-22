@@ -91,7 +91,7 @@
   <text x="1125" y="367" class="metricBig">1 month</text>
   <text x="1125" y="392" class="metricDelta">VERSUS 6–8 MONTHS</text>
   <text x="1340" y="292" class="metricLabel">DELIVERY SPEED</text>
-  <text x="1340" y="367" class="metricBig">5x+</text>
+  <text x="1340" y="367" class="metricBig">~5x</text>
   <text x="1340" y="392" class="metricDelta">FASTER PORTAL DELIVERY</text>
   <text x="1125" y="462" class="metricLabel">QUALITY AND CONTROL</text>
   <rect x="1125" y="482" width="175" height="72" rx="10" fill="#F0F1FF" stroke="#C6CBEF"/>

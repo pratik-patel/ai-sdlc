@@ -42,7 +42,7 @@ This healthcare and life sciences organization needed five digital portals befor
 
 The organization adopted a startup operating model. Patient and administrative journeys became executable product specifications linking requirements, acceptance rules, controls, tests, and release evidence. The 12-person scrum team became four three-person outcome pods. Each pod combined a domain lead, an AI-enabled engineer, and a quality and compliance owner.
 
-The first pod delivered a production portal in one month rather than the conventional six-to-eight-month timeline. The organization then replicated the pod structure and delivery pattern across the remaining portfolio. The model delivered more than 5x portal speed while keeping compliance and evidence inside each pod.
+The first pod delivered a production portal in one month rather than the conventional six-to-eight-month timeline. The organization then replicated the pod structure and delivery pattern across the remaining portfolio. The model delivered approximately 5x portal speed while keeping compliance and evidence inside each pod.
 
 ### Customer takeaway
 
